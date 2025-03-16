@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import 'tailwindcss';
+@plugin "daisyui";
+
+/* Color theme*/
+
+@theme {
+    --primary: #00001d;
+    --secondary: #023e8a;
+    --accent: #0077b6;
+    --neutral: #0096c7;
+    --primary_text: #caf0f8;
+    --secondary_text: #ffffff;
+    --accent_text: #f8f9fa;
+}
+
+/* Animations */
+
+@layer theme {
+    .gradient {
+        background: linear-gradient(
+            to right,
+            var(--primary),
+            var(--neutral),
+            #ff2f52,
+            #360236,
+            #01053b,
+            #ff00ff,
+            #dfdf00,
+            red,
+            var(--primary)
+        );
+        background-size: 200%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: animate-gradient 2.5s linear infinite;
+    }
+    @keyframes animate-gradient {
+        to {
+            background-position: 200%;
+        }
+    }
+
+    .word-space {
+        animation: animate-word-spacing 3s linear infinite;
+    }
+
+    @keyframes animate-word-spacing {
+        0% {
+            letter-spacing: normal;
+        }
+        25% {
+            letter-spacing: 5px;
+        }
+        50% {
+            letter-spacing: 7px;
+        }
+        75% {
+            letter-spacing: 5px;
+        }
+        100% {
+            letter-spacing: normal;
+        }
+    }
+
+    .head_reveal {
+        animation: animate-head-reveal linear both;
+        animation-timeline: view();
+    }
+
+    @keyframes animate-head-reveal {
+        0% {
+            opacity: 0;
+            filter: blur(40px);
+        }
+        35%,
+        65% {
+            filter: blur(0);
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            filter: blur(40px);
+        }
+    }
+
+    .auto_display {
+        animation: animate-auto-display both;
+        animation-timeline: view();
+    }
+
+    @keyframes animate-auto-display {
+        from {
+            filter: blur(10px);
+            transform: translateY(-200px) scale(0);
+            opacity: 0.2;
+        }
+        50% {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateX(0) scale(1);
+        }
+    }
+
+    .fade-in-right {
+        animation: animate-fade-in both;
+        animation-timeline: view();
+    }
+
+    @keyframes animate-fade-in {
+        0% {
+            opacity: 0;
+            transform: translateX(-500px) scale(0.2);
+            filter: blur(20px);
+        }
+        35%,
+        65% {
+            opacity: 1;
+            transform: translateX(0px) scale(1);
+            filter: blur(0);
+        }
+        100% {
+            filter: blur(20px);
+        }
+    }
+}
+
+/* Styles for body and header */
+
+@layer utilities {
+    .Nunito-regular {
+        font-family: 'Nunito', serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .body {
+        @apply w-full min-h-screen relative;
+        background-image: url('https://i.pinimg.com/236x/f1/39/40/f1394074bd6fd2de0b9b0b22050b9fcc.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .body::after {
+        content: '';
+        top: 0;
+        left: 0;
+        background-color: #00001dc4;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 0;
+    }
+    .nav_header {
+        @apply w-full fixed top-0 z-40 shadow-2xs bg-white/5 backdrop-blur-sm;
+        backdrop-filter: blur(20px);
+    }
+    .nav_bar {
+        @apply max-w-6xl flex justify-between items-center p-2 mx-auto;
+    }
+    .nav_bar_head {
+        @apply text-3xl font-bold text-[var(--accent_text)];
+    }
+    .nav_bar_links {
+        @apply md:flex justify-between items-center gap-[22px] hidden bg-transparent rounded-[20px] p-4 h-full;
+        backdrop-filter: blur(20px);
+    }
+    .nav_bar_link {
+        @apply text-[var(--accent_text)] font-semibold text-xl hover:text-[var(--primary_text)] transition duration-300;
+    }
+    .hamburger {
+        @apply text-[var(--accent_text)] font-bold hover:text-[var(--primary_text)] transition duration-300 cursor-pointer md:hidden;
+    }
+    .mobile_nav_menu {
+        @apply md:hidden fixed z-50 right-0 top-0 w-1/2 h-full bg-[var(--primary)]/90 flex justify-center items-center flex-col transition duration-500;
+    }
+    .mobile_close_btn {
+        @apply self-end text-[var(--accent_text)] font-bold mx-2 hover:text-[var(--primary_text)] transition duration-300 cursor-pointer;
+    }
+    .mobile_links {
+        @apply flex justify-center items-center flex-col gap-[95px] my-20 w-full;
+    }
+    .mobile_link {
+        @apply text-[var(--secondary_text)] font-bold text-xl hover:text-[var(--primary_text)] transition duration-300 cursor-pointer;
+    }
+    .mobile_footer {
+        @apply flex items-center justify-center gap-2 my-2 text-[var(--secondary_text)]/80;
+    }
+}
+
+/* Styles for Homepage */
+
+@layer components {
+    .main {
+        @apply w-full min-h-screen flex flex-col justify-center items-center;
+    }
+    .homepage {
+        @apply max-w-6xl min-h-[500px] mx-auto flex flex-col-reverse md:flex-row justify-center items-center gap-2 z-30 mt-[57px];
+    }
+    .homepage_content {
+        @apply w-full h-full flex-1 p-2 gap-4 flex flex-col text-center md:text-start;
+    }
+    .homepage_content_head {
+        @apply text-[var(--accent_text)] font-bold;
+    }
+    .homepage_content_banner {
+        @apply text-4xl md:text-6xl font-bold text-[var(--accent_text)];
+    }
+
+    .homepage_content_text {
+        @apply text-xl font-light text-[var(--secondary_text)]/80 my-2;
+    }
+    .social_links {
+        @apply w-1/2 mx-auto md:mx-0 flex justify-center items-center gap-4;
+    }
+    .social_link {
+        @apply text-[var(--accent)] font-bold border rounded-full p-3 hover:drop-shadow-sm transition duration-300 cursor-pointer;
+        filter: drop-shadow(0px 0px 10px var(--accent));
+    }
+
+    .homepage_img {
+        @apply flex-1 w-3/4 mx-auto h-[300px] md:w-full md:h-full p-2;
+    }
+}
+
+/* Styles for Aboutpage */
+
+@layer components {
+    .about {
+        @apply max-w-6xl min-h-[450px] mx-auto z-30 flex flex-col mt-20;
+    }
+    .about_head {
+        @apply text-3xl md:text-5xl text-[var(--accent_text)] font-bold text-center my-4;
+    }
+    .about_content {
+        @apply w-full h-full grid grid-cols-1 md:grid-cols-3 gap-[20px] place-content-center;
+    }
+
+    .about_info_1 {
+        @apply text-white w-[90%] md:w-full mx-auto h-full p-4 rounded-2xl bg-[var(--secondary)]/10 border border-[var(--accent)] shadow-sm shadow-white hover:shadow-md hover:scale-[1.02] transition duration-300 cursor-pointer md:col-span-1 gap-6;
+        backdrop-filter: blur(10px);
+    }
+    .about_info_2 {
+        @apply text-white w-[90%] md:w-full mx-auto h-full  p-4 rounded-2xl bg-[var(--secondary)]/20 border border-[var(--accent)] shadow-sm shadow-white hover:shadow-md hover:scale-[1.02] transition duration-300 cursor-pointer md:col-span-1 gap-6;
+        backdrop-filter: blur(10px);
+    }
+    .about_info_3 {
+        @apply text-white w-[90%] md:w-full mx-auto h-full  p-4 rounded-2xl bg-[var(--secondary)]/10 border border-[var(--accent)] shadow-sm shadow-white hover:shadow-md hover:scale-[1.02] transition duration-300 cursor-pointer md:col-span-1 gap-6;
+        backdrop-filter: blur(10px);
+    }
+    .about_info_4 {
+        @apply text-white w-[90%] md:w-full mx-auto h-full  p-4 rounded-2xl bg-[var(--secondary)]/20 border border-[var(--accent)] shadow-sm shadow-white hover:shadow-md hover:scale-[1.02] transition duration-300 cursor-pointer md:col-span-1 gap-6;
+        backdrop-filter: blur(10px);
+    }
+    .about_info_5 {
+        @apply text-white w-[90%] md:w-full mx-auto h-full  p-4 rounded-2xl bg-[var(--secondary)]/20 border border-[var(--accent)] shadow-sm shadow-white hover:shadow-md hover:scale-[1.02] transition duration-300 cursor-pointer md:col-span-2 gap-6;
+        backdrop-filter: blur(10px);
+    }
+}
+
+/*Styles for Portfolio Page*/
+
+@layer components {
+    .portfolio {
+        @apply max-w-6xl min-h-[450px] mx-auto z-30 flex flex-col mt-20 p-4;
+    }
+
+    .portfolio_head{
+        @apply text-3xl md:text-5xl text-[var(--accent_text)] font-bold text-center my-4;
+    }
+
+    .portfolio_content_cont{
+        @apply w-full min-h-[450px]  flex flex-col gap-4 my-4
+    }
+
+    .portfolio_content{
+        @apply max-w-5xl mx-auto min-h-[400px] flex flex-col-reverse md:flex-row justify-center items-center p-4 shadow-sm shadow-white rounded-md
+    }
+}
+
+/* Styles for Servicespage */
+
+@layer components {
+    .services {
+        @apply max-w-6xl min-h-[450px] mx-auto z-30 mt-20 flex flex-col;
+    }
+    .services_head {
+        @apply text-3xl md:text-5xl text-[var(--accent_text)] font-bold text-center my-10;
+    }
+    .service_container {
+        @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-items-center gap-8 sm:gap-24;
+    }
+
+    .service_content {
+        @apply w-[400px] h-[390px] md:w-[350px] p-2 bg-[var(--accent)]/30  shadow-sm shadow-white cursor-pointer hover:scale-[1.03] transition duration-300 flex flex-col gap-2 justify-center items-center;
+    }
+
+    .service_content_head {
+        @apply text-2xl font-bold text-[var(--accent_text)] text-center;
+    }
+
+    .service_content_text {
+        @apply text-white font-light text-lg text-center;
+    }
+}
+
+/* Styles for ContactPage */
+
+@layer components {
+    .contact {
+        @apply max-w-6xl min-h-[450px] mx-auto z-30 my-20 flex flex-col;
+    }
+
+    .contact_head {
+        @apply text-3xl md:text-5xl text-[var(--accent_text)] font-bold text-center my-10;
+    }
+
+    .contact_form_container {
+        @apply w-[420px] md:w-[850px] h-full flex flex-col md:flex-row mx-auto items-center justify-center p-2 my-4 ;
+    }
+
+    .contact_form_container_content {
+        @apply flex-1 flex flex-col justify-center items-center md:justify-start md:items-start h-full gap-3 ;
+    }
+
+    .contact_form_container_content_head {
+        @apply text-white/80 font-bold text-5xl md:text-6xl text-center md:text-start;
+    }
+
+    .contact_download_btn {
+        @apply text-white font-bold text-xl text-center p-4 bg-[var(--secondary)] my-2 cursor-pointer hover:bg-[var(--secondary)]/80 transition duration-300;
+    }
+
+    .contact_form {
+        @apply flex-1 w-full sm:w-3/4 md:w-[60%] h-full p-4 mx-auto my-4 bg-[var(--accent)]/30 rounded-[32px] backdrop-blur-3xl flex flex-col gap-6 shadow-white shadow-sm;
+    }
+
+    .contact_form_label {
+        @apply text-xl font-bold text-[var(--accent_text)];
+    }
+
+    .contact_form_input {
+        @apply w-full p-3 bg-white/10 rounded-2xl outline-none focus:ring-2 focus:ring-[var(--accent)] text-white;
+    }
+
+    .contact_form_btn {
+        @apply text-white font-bold text-xl text-center w-full p-2 rounded-xl bg-[var(--accent)] cursor-pointer hover:bg-[var(--accent)]/80 transition duration-300;
+    }
+}
+
+/* Styles for Footer*/
+
+@layer components {
+    .footer {
+        @apply bottom-0 w-full z-30 flex flex-col md:flex-row justify-center items-center p-3 mt-6 bg-[var(--secondary)] absolute gap-4;
+    }
+
+    .footer_copy {
+        @apply text-white font-semibold text-lg flex justify-center items-center;
+    }
+
+    .footer_text {
+        @apply text-white font-semibold text-lg flex justify-center items-center gap-1 italic;
+    }
+}
