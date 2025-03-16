@@ -5,7 +5,7 @@ export const sendEmail = async (req, res) => {
     try {
         await transport.sendMail({
             from: name,
-            to: '5johnndungu@gmail.com',
+            to: process.env.TO_EMAIL,
             subject: `${name}`,
             text: `${message} from ${email}`,
         });
