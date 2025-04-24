@@ -127,7 +127,7 @@ const Portfolio = () => {
                             Check out for the above project code from:{' '}
                         </h3>
                         <a href="https://github.com/gnjohnny/netflix-clone">
-                            <button className="p-3 text-white font-bold text-center bg-[var(--accent)] cursor-pointer shadow-sm shadow-white hover:bg-[var(--accent)]/80 transition duration-300 w-1/2 mx-auto flex justify-center md:mx-0 auto_display  ">
+                            <button className="p-3 text-white font-bold text-center bg-[var(--accent)] cursor-pointer shadow-sm shadow-white hover:bg-[var(--accent)]/80 transition duration-300 w-1/2 mx-auto flex justify-center md:mx-0 fade-in-right  ">
                                 GitHub Repo
                             </button>
                         </a>
@@ -182,7 +182,7 @@ const Portfolio = () => {
                             Check out for the above project code from:{' '}
                         </h3>
                         <a href="https://github.com/gnjohnny/mern-chat-app">
-                            <button className="p-3 text-white font-bold text-center bg-[var(--accent)] cursor-pointer shadow-sm shadow-white hover:bg-[var(--accent)]/80 transition duration-300 w-1/2 mx-auto flex justify-center md:mx-0 auto_display  ">
+                            <button className="p-3 text-white font-bold text-center bg-[var(--accent)] cursor-pointer shadow-sm shadow-white hover:bg-[var(--accent)]/80 transition duration-300 w-1/2 mx-auto flex justify-center md:mx-0 fade-in-right  ">
                                 GitHub Repo
                             </button>
                         </a>
@@ -237,7 +237,7 @@ const Portfolio = () => {
                             Check out for the above project code from:{' '}
                         </h3>
                         <a href="https://github.com/gnjohnny/recipe-app">
-                            <button className="p-3 text-white font-bold text-center bg-[var(--accent)] cursor-pointer shadow-sm shadow-white hover:bg-[var(--accent)]/80 transition duration-300 w-1/2 mx-auto flex justify-center md:mx-0 auto_display  ">
+                            <button className="p-3 text-white font-bold text-center bg-[var(--accent)] cursor-pointer shadow-sm shadow-white hover:bg-[var(--accent)]/80 transition duration-300 w-1/2 mx-auto flex justify-center md:mx-0 fade-in-right  ">
                                 GitHub Repo
                             </button>
                         </a>
