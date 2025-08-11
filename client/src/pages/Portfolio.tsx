@@ -6,17 +6,18 @@ import {
     SiExpress,
     SiTailwindcss,
     SiThemoviedatabase,
-    SiSocketdotio,
+    SiDaisyui,
+    SiStreamlit,
 } from 'react-icons/si';
 import { FiExternalLink } from 'react-icons/fi';
 
-interface TechStack {
+type TechStackType = {
     title: string;
     icon: IconType;
-}
+};
 
 const Portfolio = () => {
-    const netflixTechStack: TechStack[] = [
+    const netflixTechStack: TechStackType[] = [
         {
             title: 'React',
             icon: FaReact,
@@ -42,7 +43,7 @@ const Portfolio = () => {
             icon: SiThemoviedatabase,
         },
     ];
-    const chatTechStack: TechStack[] = [
+    const vidchaTechStack: TechStackType[] = [
         {
             title: 'React',
             icon: FaReact,
@@ -64,11 +65,15 @@ const Portfolio = () => {
             icon: SiTailwindcss,
         },
         {
-            title: 'Socket Io',
-            icon: SiSocketdotio,
+            title: 'Daisy UI',
+            icon: SiDaisyui,
+        },
+        {
+            title: 'Streamify',
+            icon: SiStreamlit,
         },
     ];
-    const recipyTechStack: TechStack[] = [
+    const recipyTechStack: TechStackType[] = [
         {
             title: 'React',
             icon: FaReact,
@@ -143,23 +148,22 @@ const Portfolio = () => {
                 <div className="portfolio_content auto_display">
                     <div className="flex-1 h-full md:w-1/2">
                         <h1 className="text-4xl md:text-6xl text-[var(--accent_text)] font-bold text-center md:text-start my-2 gradient">
-                            BASIC MERN CHAT APP
+                            VIDCHA
                         </h1>
                         <p className="text-lg font-light text-[var(--accent_text)]/80 text-center md:text-start my-2 fade-in-right">
-                            A real-time chat application built using the MERN
-                            stack (MongoDB, Express, React, Node.js) and
-                            Socket.io for instant messaging. Users can sign up,
-                            log in, send messages, and create chat rooms with a
-                            smooth and responsive UI. The app features JWT
-                            authentication, and MongoDB storage for persistent
-                            conversations.
+                            Vidcha is a video calling and chat platform that
+                            lets you connect with friends through high-quality
+                            calls and instant messaging. You can easily send and
+                            receive friend requests, making it simple to grow
+                            your network. Powered by Streamify for a smooth and
+                            reliable experience
                         </p>
 
                         <p className="text-sm font-extralight text-[var(--secondary_text)] my-1 text-center md:text-start fade-in-right">
                             Tech stack used:{' '}
                         </p>
                         <div className="w-full flex flex-wrap justify-center items-center gap-2 fade-in-right">
-                            {chatTechStack.map((stack, idx) => (
+                            {vidchaTechStack.map((stack, idx) => (
                                 <div
                                     className="bg-[var(--secondary)]/70 flex justify-center items-center py-1 px-3 rounded-4xl"
                                     key={idx}
@@ -226,7 +230,7 @@ const Portfolio = () => {
                             ))}
                         </div>
 
-                        <a href="https://recipyfoods.netlify.app/">
+                        <a href="https://recipe-app-aifc.onrender.com/">
                             <h1 className="text-md font-light italic text-[var(--accent_text)] flex my-3 gap-2 underline w-1/2 mx-auto md:w-full fade-in-right">
                                 Follow this live link for preview{' '}
                                 <FiExternalLink />
