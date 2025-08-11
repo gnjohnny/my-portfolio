@@ -72,7 +72,7 @@ const Contact = () => {
                             </button>
                         </a>
                     </div>
-                    <a href="/JohnnyDevResume.docx" download>
+                    <a href="/johnny_cv.pdf" download>
                         <button className="contact_download_btn">
                             Download Resume
                         </button>

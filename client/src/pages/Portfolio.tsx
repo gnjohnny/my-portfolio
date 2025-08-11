@@ -193,7 +193,7 @@ const Portfolio = () => {
                     </div>
                     <div className="flex-1 h-full md:w-1/2">
                         <img
-                            src="/chatty.png"
+                            src="/vidcha.png"
                             alt=""
                             className="w-full h-full rounded-2xl"
                         />
