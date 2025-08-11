@@ -175,7 +175,7 @@ const Portfolio = () => {
                             ))}
                         </div>
 
-                        <a href="https://chatty-5vu9.onrender.com/">
+                        <a href="https://vidcha.onrender.com/">
                             <h1 className="text-md font-light italic text-[var(--accent_text)] flex my-3 gap-2 underline w-1/2 mx-auto md:w-full fade-in-right">
                                 Follow this live link for preview{' '}
                                 <FiExternalLink />
@@ -185,7 +185,7 @@ const Portfolio = () => {
                         <h3 className="text-md font-light italic text-[var(--accent_text)] my-3 text-center md:text-start fade-in-right">
                             Check out for the above project code from:{' '}
                         </h3>
-                        <a href="https://github.com/gnjohnny/mern-chat-app">
+                        <a href="https://github.com/gnjohnny/vidcha">
                             <button className="p-3 text-white font-bold text-center bg-[var(--accent)] cursor-pointer shadow-sm shadow-white hover:bg-[var(--accent)]/80 transition duration-300 w-1/2 mx-auto flex justify-center md:mx-0 fade-in-right  ">
                                 GitHub Repo
                             </button>
