@@ -28,7 +28,7 @@ const Homepage = () => {
                         </button>
                     </a>
                     <a
-                        href="https://www.linkedin.com/in/johnny-dev/"
+                        href="https://www.linkedin.com/in/johnny-developer/"
                         target="_blank"
                     >
                         <button className="social_link">
